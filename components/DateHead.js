@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
 
 function DateHead({date}) {
   const year = date.getFullYear();
@@ -7,11 +7,14 @@ function DateHead({date}) {
   const day = date.getDate();
 
   return (
-    <View style={styles.block}>
-      <Text style={styles.dateText}>
-        {year}년 {month}월 {day}일
-      </Text>
-    </View>
+    <>
+      <StatusBar backgroundColor="#26a69a" />
+      <View style={styles.block}>
+        <Text style={styles.dateText}>
+          {year}년 {month}월 {day}일
+        </Text>
+      </View>
+    </>
   );
 }
 
