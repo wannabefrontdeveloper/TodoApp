@@ -19,6 +19,10 @@ function App() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  block: {
+    flex: 1,
+  },
+});
 
 export default App;
