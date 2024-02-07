@@ -8,7 +8,7 @@ function App() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView edges={['bottom']}>
         <DateHead date={today} />
       </SafeAreaView>
     </SafeAreaProvider>
