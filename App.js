@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import DateHead from './components/DateHead';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import AddTodo from './components/AddTodo';
 
 function App() {
   const today = new Date();
@@ -10,6 +11,7 @@ function App() {
     <SafeAreaProvider>
       <SafeAreaView edges={['bottom']}>
         <DateHead date={today} />
+        <AddTodo />
       </SafeAreaView>
     </SafeAreaProvider>
   );
