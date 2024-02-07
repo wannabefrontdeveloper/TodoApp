@@ -2,10 +2,12 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 function Empty() {
-  const source = {uri: 'https://via.placeholder.com/150'};
   return (
     <View style={styles.block}>
-      <Image source={source} style={styles.image} resizeMode="contain" />
+      <Image
+        source={require('../assets/images/young_and_happy.png')}
+        style={styles.image}
+      />
       <Text style={styles.description}>야호! 할일이 없습니다.</Text>
     </View>
   );
@@ -18,8 +20,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: 300,
-    height: 200,
+    width: 240,
+    height: 179,
+    marginBottom: 16,
   },
   description: {
     fonstSize: 24,
