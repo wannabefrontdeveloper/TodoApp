@@ -10,7 +10,9 @@ function DateHead({date}) {
 
   return (
     <View style={styles.block}>
-      <Text style={styles.dateText}>{formatted}</Text>
+      <Text style={styles.dateText}>
+        {year}년 {month}월 {day}일
+      </Text>
     </View>
   );
 }
