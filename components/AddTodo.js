@@ -29,13 +29,15 @@ function AddTodo() {
           </View>
         </TouchableOpacity>
       ) : (
-        <TouchableNativeFeedback>
-          <View style={styles.buttonStyle}>
-            <Image
-              source={require('../assets/icons/add_white/add_white.png')}
-            />
-          </View>
-        </TouchableNativeFeedback>
+        <View style={styles.circleWrapper}>
+          <TouchableNativeFeedback>
+            <View style={styles.buttonStyle}>
+              <Image
+                source={require('../assets/icons/add_white/add_white.png')}
+              />
+            </View>
+          </TouchableNativeFeedback>
+        </View>
       )}
     </View>
   );
@@ -63,6 +65,10 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     backgroundColor: '#26a69a',
+    borderRadius: 24,
+  },
+  circleWrapper: {
+    overflow: 'hidden',
     borderRadius: 24,
   },
 });
