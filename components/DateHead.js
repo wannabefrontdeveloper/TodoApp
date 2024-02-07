@@ -6,8 +6,6 @@ function DateHead({date}) {
   const month = date.getMonth() + 1;
   const day = date.getDate();
 
-  const formatted = `${year}년 ${month}월 ${day}일`;
-
   return (
     <View style={styles.block}>
       <Text style={styles.dateText}>
