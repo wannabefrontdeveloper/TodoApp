@@ -14,7 +14,7 @@ function TodoItem({id, text, done, onToggle}) {
           )}
         </View>
       </TouchableOpacity>
-      <Text style={(styles.text, done && styles.lineThrough)}>{text}</Text>
+      <Text style={[styles.text, done && styles.lineThrough]}>{text}</Text>
       {done ? (
         <Icon name="delete" size={32} color="red" />
       ) : (
