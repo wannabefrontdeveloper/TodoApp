@@ -5,7 +5,7 @@ import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import AddTodo from './components/AddTodo';
 import Empty from './components/Empty';
 import TodoList from './components/TodoList';
-import AsyncStorage from '@react-native-community/async-storage';
+import todosStorage from './storages/todosStorages';
 
 function App() {
   const today = new Date();
@@ -15,15 +15,13 @@ function App() {
     {id: 2, text: '리액트 네이티브 기초 공부', done: false},
     {id: 3, text: '투두리스트 만들어보기', done: false},
   ]);
+  // 불러오기
+  useEffect(() => {
+    todosStorage.get().then(setTodos).catch(console.error);
+  }, []);
 
   useEffect(() => {
-    async function save() {
-      try {
-        await AsyncStorage.setItem('todos', JSON.stringify(todos));
-      } catch (e) {
-        console.log('Failed to save todos');
-      }
-    }
+    todosStorage.set(todos).catch(console.error);
   }, [todos]);
 
   const onInsert = text => {
@@ -56,7 +54,7 @@ function App() {
     <SafeAreaProvider>
       <SafeAreaView edges={['bottom']} style={styles.block}>
         <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          behavior={Platform.select({ios: 'padding'})}
           style={styles.avoid}>
           <DateHead date={today} />
           {todos.length === 0 ? (
